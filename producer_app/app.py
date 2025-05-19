@@ -18,7 +18,7 @@ def submit():
         'name': request.form['name'],
         'email': request.form['email']
     }
-    producer.send('test-topic', value=data)
+    producer.send('form-data', value=data)
 
     return '''
     <!DOCTYPE html>
