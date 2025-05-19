@@ -14,7 +14,7 @@ def consume_messages():
     }
 
     consumer = Consumer(conf)
-    topic = 'test-topic'
+    topic = 'form-data'
     consumer.subscribe([topic])
     while True:
         msg = consumer.poll(1.0)
