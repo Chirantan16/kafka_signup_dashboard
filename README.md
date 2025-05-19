@@ -18,7 +18,8 @@ kafka-form-dashboard/
 How to run local zookeeper and kafka after downloading the kafka files and creating a topic:
 
 ```
-kafka/bin/zookeeper-server-start.sh config/zookeeper.properties
+cd kafka
+bin/zookeeper-server-start.sh config/zookeeper.properties
 bin/kafka-server-start.sh config/server.properties
 bin/kafka-topics.sh --create --topic form-data --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
 ```
