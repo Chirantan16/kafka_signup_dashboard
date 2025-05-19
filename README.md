@@ -6,7 +6,7 @@ The Project Directory Tree:
 kafka-form-dashboard/
 ├── README.md
 ├── requirements.txt
-├── kafka-env/           # (created after running venv)
+├── kafka-env/           # (created after running venv only for Ubuntu)
 ├── consumer_app/
 │   └── dashboard.py
 └── producer_app/
@@ -15,12 +15,26 @@ kafka-form-dashboard/
     └── app.py
 ```
 
-How to run local zookeeper and kafka after downloading the kafka files and creating a topic:
+Starting local Zookeeper and Kafka after downloading the Kafka files.
 
 ```
-kafka/bin/zookeeper-server-start.sh config/zookeeper.properties
+cd kafka
+bin/zookeeper-server-start.sh config/zookeeper.properties
 bin/kafka-server-start.sh config/server.properties
+```
+
+Creating a Kafka Topic.
+
+```
+cd kafka
 bin/kafka-topics.sh --create --topic form-data --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+```
+
+Stopping the Zookeeper and Kafka.
+
+```
+bin/zookeeper-server-stop.sh config/zookeeper.properties
+bin/kafka-server-stop.sh config/server.properties
 ```
 
 To Run the Project in Ubuntu a virtual environment needs to be created.
