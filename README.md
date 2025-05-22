@@ -23,6 +23,14 @@ bin/zookeeper-server-start.sh config/zookeeper.properties
 bin/kafka-server-start.sh config/server.properties
 ```
 
+Starting Kafka via Kraft
+
+```
+./bin/kafka-storage.sh random-uuid	
+./bin/kafka-storage.sh format -t <UUID> -c 	config/kraft/server.properties
+./bin/kafka-server-start.sh config/kraft/server.properties
+```
+
 Creating a Kafka Topic.
 
 ```
@@ -30,11 +38,12 @@ cd kafka
 bin/kafka-topics.sh --create --topic form-data --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
 ```
 
-Stopping the Zookeeper and Kafka.
+Stopping the Zookeeper and Kafka or Kraft Kafka.
 
 ```
 bin/zookeeper-server-stop.sh config/zookeeper.properties
 bin/kafka-server-stop.sh config/server.properties
+./bin/kafka-server-stop.sh config/kraft/server.properties
 ```
 
 To Run the Project in Ubuntu a virtual environment needs to be created.
