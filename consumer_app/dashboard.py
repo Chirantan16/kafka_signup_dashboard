@@ -35,6 +35,7 @@ def get_messages():
 
 @app.route('/')
 def home():
+    print("Starting the dashboard...")
     return '''
     <!DOCTYPE html>
     <html>
