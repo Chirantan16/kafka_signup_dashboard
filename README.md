@@ -27,7 +27,7 @@ Starting Kafka via Kraft
 
 ```
 ./bin/kafka-storage.sh random-uuid	
-./bin/kafka-storage.sh format -t <UUID> -c 	config/kraft/server.properties
+./bin/kafka-storage.sh format -t <UUID> -c config/kraft/server.properties
 ./bin/kafka-server-start.sh config/kraft/server.properties
 ```
 
